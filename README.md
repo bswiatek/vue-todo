@@ -1,5 +1,7 @@
 # todo
 
+This is simple todo application created with vue.js 2
+
 ## Project setup
 ```
 npm install
