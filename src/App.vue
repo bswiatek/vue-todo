@@ -18,6 +18,14 @@
           <label class="form-check-label font-weight-bold">Ukryj zakończone zadania</label>
         </div>
       </div>
+      <div class="row py-2">
+        <div class="col">
+          <input v-model="newItemText" class="form-control" />
+        </div>
+        <div class="col-2">
+          <button class="btn btn-primary" v-on:click="addNewTodo">Dodaj</button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -34,12 +42,22 @@ export default {
         { action: "Odbierz bilety", done: true},
         { action: "Zadzwoń do Janka", done: false},
       ],
-      hideCompleted: true
+      hideCompleted: true,
+      newItemText: "",
     }
   },
   computed: {
     filteredTasks() {
       return this.hideCompleted ? this.tasks.filter(t => !t.done) : this.tasks
+    }
+  },
+  methods: {
+    addNewTodo() {
+      this.tasks.push({
+        action: this.newItemText,
+        done: false
+      });
+      this.newItemText = "";
     }
   }
 }
