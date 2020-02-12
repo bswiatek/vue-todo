@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <Todo/>
+    <todo/>
+    <js-primer/>
   </div>
 </template>
 
 <script>
 import Todo from './components/Todo.vue'
+import JsPrimer from './components/JsPrimer.vue'
 
 export default {
   name: 'app',
   components: {
-    Todo
+    Todo, JsPrimer
   }
 }
 </script>
