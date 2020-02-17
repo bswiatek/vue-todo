@@ -21,4 +21,9 @@ let myData = {
   }
 };
 myData.printMessages();
+
+import additionFunction from "@/components/maths/sum";
+let values = [10, 20, 30, 40, 50];
+let total = additionFunction(values);
+console.log("Łącznie: " + total);
 </script>
